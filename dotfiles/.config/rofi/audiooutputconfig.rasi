@@ -1,0 +1,13 @@
+/* ── Rofi Config ──────────────────────────────
+   Location: ~/.config/rofi/audiooutputconfig.rasi
+   Description: Config for the waybar volume-module output-device picker
+   ─────────────────────────────────────────── */
+
+configuration {
+    modi: "dmenu";
+    show-icons: false;
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+/* Import theme */
+@theme "~/.config/rofi/themes/audio-output-theme.rasi"

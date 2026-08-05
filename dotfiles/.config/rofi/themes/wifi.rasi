@@ -1,0 +1,179 @@
+/* wifi-theme.rasi
+ *   Goal:
+ *   - Match powermenutheme.rasi look (square, blue border, dark panel, orange text)
+ *   - Remove beige row cards (force ALL non-selected row states transparent)
+ *   - Keep selected row distinct
+ */
+
+* {
+  font: "JetBrainsMono Nerd Font 8";
+  blur: true;
+
+  padding: 0px;
+  margin: 0px;
+
+  background-color: transparent;
+  text-color: #fab387;
+
+  border: 0px;
+  border-radius: 0px;
+}
+
+/* ── Window ──────────────────────────────── */
+window {
+  /* Adjust these as desired */
+  width: 340px;
+  height: 560px;
+
+  location: northwest;
+  blur: true;
+
+  border: 2px;
+  border-color: #61afef;
+  border-radius: 0px;
+
+  background-color: transparent;
+  padding: 0px;
+  margin: 5px 0px;
+}
+
+/* ── Layout ──────────────────────────────── */
+mainbox {
+  orientation: vertical;
+  spacing: 0px;
+  padding: 0px;
+}
+
+/* networkmanager-dmenu often uses a message area at top */
+message {
+  background-color: rgba(46, 52, 64, 0.8);
+  padding: 6px 8px;
+  border-radius: 0px;
+}
+
+textbox {
+  background-color: transparent;
+  text-color: #fab387;
+  padding: 0px;
+  border-radius: 0px;
+}
+
+/* Disable input/search bar to match your powermenu */
+/* Enable password prompt UI */
+inputbar {
+  enabled: true;
+  background-color: rgba(46, 52, 64, 0.8);
+  padding: 6px 8px;
+  spacing: 6px;
+  border-radius: 0px;
+}
+
+prompt {
+  enabled: true;
+  background-color: transparent;
+  text-color: #61afef;
+  padding: 0px;
+}
+
+entry {
+  enabled: true;
+  background-color: transparent; /* or #292e36 if you want a filled field */
+  text-color: #fab387;
+  padding: 0px;
+  border-radius: 0px;
+}
+
+
+
+/* ── Listview Panel ──────────────────────── */
+listview {
+  lines: 12;  /* adjust visible rows */
+
+  background-color: rgba(46, 52, 64, 0.8);
+  padding: 5px;
+  spacing: 0px;
+
+  border: 0px;
+  border-radius: 0px;
+}
+
+/* ── Rows / Elements ─────────────────────── */
+/* IMPORTANT: networkmanager-dmenu/rofi will use element normal/alternate.
+ *   If you don't override them, you can get beige zebra “cards”. */
+
+element {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  border-radius: 0px;
+
+  background-color: transparent;
+  text-color: #fab387;
+}
+
+/* Explicitly kill non-selected backgrounds in ALL common states */
+element normal {
+  background-color: transparent;
+}
+
+element alternate {
+  background-color: transparent;
+}
+
+element active {
+  background-color: transparent;
+}
+
+element urgent {
+  background-color: transparent;
+}
+
+/* Text inside each row */
+element-text {
+  padding: 6px 8px;
+  background-color: transparent;
+
+  text-color: inherit;
+  horizontal-align: 0.0;
+}
+
+/* Selected row only: distinct background + text */
+element selected {
+  background-color: #191919;
+  text-color: #e5c07b;
+  border-radius: 0px;
+}
+
+element selected normal {
+  background-color: #191919;
+  text-color: #e5c07b;
+}
+
+element selected active {
+  background-color: #191919;
+  text-color: #e5c07b;
+}
+
+element selected urgent {
+  background-color: #191919;
+  text-color: #e5c07b;
+}
+
+/* Optional: if icons exist in your list rows */
+element-icon {
+  background-color: transparent;
+  size: 1.0em;
+  margin: 0px 6px 0px 0px;
+}
+
+/* ── Scrollbar (subtle, matches border color) ── */
+scrollbar {
+  width: 6px;
+  background-color: transparent;
+  padding: 0px;
+}
+
+scrollbar handle {
+  background-color: #61afef;
+  border-radius: 0px;
+}

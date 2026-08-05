@@ -1,0 +1,11 @@
+# Claude Code local session state (permissions cache, not meant to be shared)
+**/.claude/
+
+# LibreOffice: recent-document history (personal file paths, not portable config)
+dotfiles/.config/libreoffice/4/user/registrymodifications.xcu
+
+# Editor/tool backup cruft
+*.save
+*~
+*.bak
+.DS_Store

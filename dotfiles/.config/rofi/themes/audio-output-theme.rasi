@@ -1,0 +1,110 @@
+/* audio-output-theme.rasi
+   ── Rofi Theme ──────────────────────────────
+   Output-device picker for the waybar volume module.
+   Clone of powermenutheme.rasi (same square/blue-border/orange-text look),
+   widened for device names and offset to sit under the volume module.
+   ─────────────────────────────────────────── */
+
+/* Global defaults */
+* {
+  font: "JetBrainsMono Nerd Font 8";
+  blur: true;
+  padding: 5px;
+  background-color: transparent;
+  border-radius: 0px;
+}
+
+/* ── Window ──────────────────────────────── */
+window {
+  width: 340px;
+  height: 100px;
+
+  location: northwest;
+  anchor: northwest;
+  x-offset: 288px;
+  y-offset: 0px;
+  blur: true;
+
+  border: 2px;
+  border-radius: 0px;
+  border-color: #61afef;
+
+  background-color: transparent;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* ── Layout ──────────────────────────────── */
+mainbox {
+  orientation: horizontal;
+  children: [ "borderbox" ];
+  spacing: 0px;
+  padding: 0px;
+}
+
+borderbox {
+  orientation: horizontal;
+  children: ["contentbox"];
+  padding: 0px;
+  spacing: 0px;
+  border-radius: 0px;
+}
+
+contentbox {
+  orientation: vertical;
+  children: [ "listview" ];
+  spacing: 0px;
+  padding: 0px;
+  expand: true;
+}
+
+/* ── Elements ────────────────────────────── */
+element {
+  border-radius: 0px;
+}
+
+element-text {
+  padding: 6px 8px;
+  spacing: 2px;
+  text-color: #fab387;
+}
+
+element normal {
+  background-color: transparent;
+}
+
+element selected {
+  background-color: #191919;
+  text-color: #e5c07b;
+  border-radius: 0px;
+}
+
+element selected normal {
+  background-color: #191919;
+  text-color: #e5c07b;
+}
+
+element selected active {
+  background-color: #191919;
+  text-color: #e5c07b;
+}
+
+/* ── Input & Prompt ──────────────────────── */
+prompt {
+  enabled: false;
+  background-color: transparent;
+  text-color: #61afef;
+  padding: 5px 10px;
+}
+
+entry {
+  enabled: false;
+}
+
+/* ── Listview ────────────────────────────── */
+listview {
+  lines: 4;
+  background-color: rgba(46, 52, 64, 0.8);
+  border-radius: 0px;
+  padding: 5px;
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "modules": [
+    {
+      "key": "Hostname{#keys}",
+      "type": "command",
+      "text": "hostnamectl --static 2>/dev/null || hostname"
+    },
+
+    {
+      "key": "Boot Time{#keys}",
+      "type": "command",
+      "text": "bt=$(systemd-analyze 2>/dev/null | awk -F'= ' '{print $2}' | awk '{print $1}'); echo ${bt:-N/A}"
+    },
+
+    {
+      "key": "OS Age{#keys}",
+      "type": "command",
+      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progress=$((current - birth_install)); echo \"$((time_progress / 86400)) days\""
+    },
+
+    {
+      "type": "separator"
+    },
+
+    {
+      "type": "chassis"
+    },
+
+    {
+      "type": "cpu",
+      "format": "{name} ({cores-physical}C/{cores-logical}T) @ {freq-max}"
+    },
+
+    {
+      "type": "gpu",
+      "format": "{name} ({3})"
+    },
+
+    {
+      "type": "memory"
+    },
+
+    {
+      "type": "separator"
+    },
+
+    {
+      "type": "os"
+    },
+
+    {
+      "type": "kernel"
+    },
+
+    {
+      "type": "bootmgr"
+    },
+
+    {
+      "type": "wm"
+    },
+
+    {
+      "type": "shell"
+    },
+
+    {
+      "key": "Terminal{#keys}",
+      "type": "terminal"
+    },
+
+    {
+      "type": "separator"
+    },
+
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
+  ]
+}
+
