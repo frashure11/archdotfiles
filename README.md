@@ -22,10 +22,18 @@ via the scripts in `setup_scripts/`.
 git clone <this-repo-url> ~/Custom
 cd ~/Custom/setup_scripts
 
+./step0_packages.sh   # install everything these dotfiles depend on (pacman + AUR)
 ./step1_symlinks.sh   # symlink dotfiles/.config/* and .bashrc into place
 ./step2_chmod.sh      # restore +x on scripts under the symlinked configs
 sudo ./step3_sddm.sh  # install the SDDM theme/config system-wide (needs root)
 ```
+
+`step0_packages.sh` installs from the official repos, then bootstraps `yay`
+(if missing) to pull the handful of AUR-only packages (`apple_cursor`,
+`waterfox-bin`, `msi-ec-git`). One exception it can't handle: `hyprnotes`
+(bound to `SUPER+N`) isn't packaged anywhere — it's a standalone binary this
+machine keeps at `~/.local/bin/hyprnotes`, so you'll need to supply that
+yourself on a fresh machine.
 
 Other standalone helper scripts (not part of the numbered bootstrap flow):
 
